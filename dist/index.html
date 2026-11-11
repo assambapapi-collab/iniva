@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iniva — tes questions, en toute confidentialité</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#F6F3FA; --surface:#FFFFFF; --ink:#261A33; --muted:#6A5E78;
+ --plum:#5B2E7A; --plum-soft:#EEE5F5; --sun:#F2B33D; --leaf:#2F7A5C; --leaf-soft:#E3F2EB;
+ --alert:#8A2340; --alert-soft:#FBE7EC; --line:#E2DAEA;
+ color-scheme: light;
+ box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+ --bg:#17111D; --surface:#221A2B; --ink:#F1EAF7; --muted:#B5A8C4;
+ --plum:#C79BE8; --plum-soft:#33263F; --sun:#F2B33D; --leaf:#7FD1AC; --leaf-soft:#1E3329;
+ --alert:#F29AB0; --alert-soft:#3A1D27; --line:#3A2F45; color-scheme:dark; }}
+:root[data-theme="dark"]{ --bg:#17111D; --surface:#221A2B; --ink:#F1EAF7; --muted:#B5A8C4;
+ --plum:#C79BE8; --plum-soft:#33263F; --leaf:#7FD1AC; --leaf-soft:#1E3329; --alert:#F29AB0; --alert-soft:#3A1D27; --line:#3A2F45; color-scheme:dark; }
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.5}
+.app{max-width:560px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.mark{width:40px;height:40px;border-radius:50% 50% 50% 12px;background:var(--plum);display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;flex:none}
+:root[data-theme="dark"] .mark{color:#17111D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mark{color:#17111D}}
+.brand{flex:1;min-width:0}
+.brand h1{margin:0;font-size:22px;font-weight:800;letter-spacing:-.01em}
+.brand p{margin:0;font-size:13px;color:var(--muted)}
+.exit{border:0;background:var(--alert-soft);color:var(--alert);font:inherit;font-size:14px;font-weight:700;padding:8px 12px;border-radius:999px;cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+main{flex:1;padding:18px}
+.gate h2{font-size:28px;line-height:1.15;margin:8px 0 12px;font-weight:800;letter-spacing:-.02em}
+.gate p{margin:0 0 12px;max-width:62ch}
+.promise{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin:16px 0}
+.promise{padding-left:36px}
+.promise li{margin:4px 0}
+.ages{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.ages button,.chip{border:1.5px solid var(--plum);background:transparent;color:var(--plum);font:inherit;font-weight:700;padding:10px 16px;border-radius:999px;cursor:pointer}
+.ages button[aria-pressed="true"]{background:var(--plum);color:var(--surface)}
+.primary{display:block;width:100%;border:0;background:var(--plum);color:var(--surface);font:inherit;font-weight:800;font-size:18px;padding:15px;border-radius:16px;cursor:pointer;margin-top:10px}
+.primary:disabled{opacity:.4;cursor:not-allowed}
+label.consent{display:flex;gap:10px;align-items:flex-start;margin:12px 0}
+label.consent input{width:22px;height:22px;margin-top:2px;accent-color:var(--plum)}
+.thread{display:flex;flex-direction:column;gap:12px;padding-bottom:12px}
+.msg{max-width:88%;padding:12px 15px;border-radius:20px;white-space:pre-wrap}
+.me{align-self:flex-end;background:var(--plum);color:var(--surface);border-bottom-right-radius:6px}
+.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:6px}
+.bot .q{font-weight:800;margin:0 0 6px}
+.status{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--plum-soft);color:var(--plum)}
+.status.ok{background:var(--leaf-soft);color:var(--leaf)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.actions button{border:0;background:var(--plum-soft);color:var(--plum);font:inherit;font-size:15px;font-weight:700;padding:8px 12px;border-radius:12px;cursor:pointer}
+.actions .fb[aria-pressed="true"]{background:var(--leaf);color:var(--surface)}
+.crisis{align-self:stretch;max-width:100%;background:var(--alert-soft);border:1.5px solid var(--alert);color:var(--ink)}
+.crisis h3{margin:0 0 6px;color:var(--alert);font-size:18px}
+.contacts{margin:10px 0 0;padding:0;list-style:none}
+.contacts li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-top:1px solid var(--line)}
+.related{margin-top:8px;font-size:14px;color:var(--muted)}
+.related button{display:block;text-align:left;border:0;background:none;color:var(--plum);font:inherit;font-weight:700;padding:4px 0;cursor:pointer}
+.starters{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.chip{font-size:15px;padding:8px 13px}
+.compose{position:sticky;bottom:0;background:var(--bg);padding:10px 18px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:flex;gap:8px}
+.compose input{flex:1;min-width:0;font:inherit;padding:13px 15px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.compose button{border:0;background:var(--sun);color:#261A33;font:inherit;font-weight:800;padding:0 18px;border-radius:16px;cursor:pointer}
+.note{font-size:13px;color:var(--muted);text-align:center;margin:6px 18px 0}
+.sheet{position:fixed;inset:0;background:rgba(20,10,30,.45);display:none;align-items:flex-end;justify-content:center;z-index:20}
+.sheet.open{display:flex}
+.sheet .panel{background:var(--bg);width:100%;max-width:560px;max-height:85vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px))}
+.panel h2{margin:0 0 10px;font-size:22px}
+.clinic{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:10px 0}
+.clinic h3{margin:0;font-size:17px}
+.clinic p{margin:4px 0;font-size:15px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;font-weight:700;background:var(--leaf-soft);color:var(--leaf);padding:2px 8px;border-radius:999px;margin:4px 4px 0 0}
+.close{float:right;border:0;background:var(--plum-soft);color:var(--plum);font:inherit;font-weight:700;padding:6px 12px;border-radius:12px;cursor:pointer}
+.testbar{background:var(--sun);color:#261A33;font-size:14px;font-weight:700;padding:8px 18px;display:none;gap:10px;align-items:center;flex-wrap:wrap}
+.testbar.on{display:flex}
+.testbar button{border:0;background:#261A33;color:#fff;font:inherit;font-size:13px;padding:5px 10px;border-radius:8px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.msg{animation:in .18s ease-out}@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1}}}
+</style>
+</head>
+<body>
+<div class="app"><div style="background:#F2E9FB;border-bottom:2px solid #5B2E7A;color:#3F1D59;padding:10px 14px;font-size:14px;text-align:center;font-weight:700" role="note">Version de démonstration · Test APSAD réservé aux 18–24 ans. En cas d’urgence, contactez un professionnel de santé.</div>
+ <header>
+  <div class="mark" aria-hidden="true">I</div>
+  <div class="brand"><h1>Iniva</h1><p>Tes questions sur ton corps, en toute confidentialité</p></div>
+  <button class="exit" id="exit" title="Quitte immédiatement la page">Quitter vite</button>
+ </header>
+ <div class="testbar" id="testbar">Mode test : <span id="stats">0 question</span><button id="export">Exporter les résultats (CSV)</button></div>
+ <main id="main"></main>
+</div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"><div class="panel" id="panel"></div></div>
+
+<script>
+const INIVA_CONFIG = {
+  // Optional open-source LLM (e.g. Ollama running Mistral or Llama): set llmEndpoint to "http://localhost:11434/api/chat".
+  // Left null, Iniva answers only from the validated knowledge base (retrieval mode).
+  llmEndpoint: null, llmModel: "mistral",
+  // Switch to true and fill validatedBy once APSAD's President has signed off the content.
+  contentValidated: true, validatedBy: "APSAD (10/11/2026)",
+  minAge: 18, maxAge: 24
+};
+const KB = {"version": "0.1.0", "status": "Validation médicale APSAD déclarée le 10/11/2026 — pièce d’approbation signée à archiver", "language": "fr", "entries": [{"id": "regles-01", "theme": "regles", "question": "Est-ce normal que mes règles soient irrégulières ?", "keywords": ["irregulier", "irregulieres", "pas regulier", "cycle", "decale", "chaque mois", "pas le meme jour"], "answer": "Oui, c'est fréquent, surtout dans les deux à trois premières années après les premières règles : le corps met du temps à trouver son rythme. Un cycle de 21 à 45 jours est courant chez les adolescentes. Si tes règles restent très irrégulières après quelques années, ou si elles s'arrêtent plusieurs mois, parles-en à un agent de santé.", "refer": true, "services": ["consultation"]}, {"id": "regles-02", "theme": "regles", "question": "J'ai du retard dans mes règles, que faire ?", "keywords": ["retard", "pas eu mes regles", "regles en retard", "pas vu mes regles", "toujours pas"], "answer": "Un retard peut venir du stress, de la fatigue, d'une maladie ou d'un changement de poids. Mais si tu as eu un rapport sexuel sans préservatif ou si la contraception a pu échouer, une grossesse est possible : fais un test de grossesse dès le jour où tes règles auraient dû arriver. Le test est disponible en pharmacie ou au centre de santé.", "refer": true, "services": ["test-grossesse", "consultation"]}, {"id": "regles-03", "theme": "regles", "question": "Mes règles me font très mal, c'est normal ?", "keywords": ["douleur", "mal au ventre", "crampes", "douleurs de regles", "mal pendant les regles", "dysmenorrhee"], "answer": "Des douleurs au bas du ventre pendant les règles sont fréquentes. Une bouillotte, du repos et un antidouleur courant conseillé par un pharmacien peuvent aider. Si la douleur t'empêche d'aller à l'école ou de faire tes activités, ou si elle ne passe pas avec un antidouleur, consulte : cela peut se soigner.", "refer": true, "services": ["consultation"]}, {"id": "regles-04", "theme": "regles", "question": "Combien de temps durent les règles normalement ?", "keywords": ["combien de jours", "duree", "durent", "longtemps", "jours de regles"], "answer": "Les règles durent en général de 2 à 7 jours. Si elles durent plus de 7 jours, si tu dois changer de protection toutes les heures, ou si tu as des vertiges, consulte un agent de santé : des règles très abondantes peuvent fatiguer et causer une anémie.", "refer": true, "services": ["consultation"]}, {"id": "regles-05", "theme": "regles", "question": "À quel âge arrivent les premières règles ?", "keywords": ["premieres regles", "quel age", "pas encore eu", "jamais eu", "puberte"], "answer": "Les premières règles arrivent le plus souvent entre 9 et 16 ans. Chaque corps a son rythme. Si tu n'as pas encore eu tes règles à 16 ans, ou s'il n'y a aucun signe de puberté à 14 ans, une consultation permet de vérifier que tout va bien.", "refer": true, "services": ["consultation"]}, {"id": "regles-06", "theme": "regles", "question": "Combien de temps garder une serviette ou un tampon ?", "keywords": ["serviette", "tampon", "protection", "changer", "coupe menstruelle", "hygiene"], "answer": "Change ta serviette toutes les 4 à 6 heures, ou plus souvent si le flux est abondant. Un tampon ne doit jamais rester plus de 8 heures. Lave-toi les mains avant et après. Si tu n'as pas accès à des protections, parles-en à l'infirmière scolaire ou au centre de santé : des solutions existent.", "refer": false, "services": []}, {"id": "regles-07", "theme": "regles", "question": "Est-ce que je peux tomber enceinte pendant mes règles ?", "keywords": ["enceinte pendant les regles", "rapport pendant les regles", "enceinte pendant mes regles"], "answer": "C'est moins probable, mais c'est possible, surtout si tes cycles sont courts ou irréguliers. Il n'existe pas de période totalement sans risque. Le préservatif ou une autre contraception reste nécessaire à chaque rapport.", "refer": true, "services": ["contraception"]}, {"id": "regles-08", "theme": "regles", "question": "J'ai des saignements en dehors de mes règles", "keywords": ["saignement entre", "saigne en dehors", "spotting", "pertes de sang", "saignements"], "answer": "De petits saignements entre les règles peuvent arriver, par exemple au début d'une contraception hormonale. Mais des saignements répétés, après un rapport ou accompagnés de douleurs ou de fièvre doivent être examinés par un agent de santé. Si tu saignes beaucoup, va tout de suite au centre de santé ou aux urgences.", "refer": true, "services": ["consultation"]}, {"id": "contra-01", "theme": "contraception", "question": "Quelles sont les méthodes de contraception ?", "keywords": ["contraception", "methodes", "eviter grossesse", "ne pas tomber enceinte", "moyens"], "answer": "Les principales méthodes sont : le préservatif masculin ou féminin, la pilule, l'injection tous les trois mois, l'implant sous la peau du bras (3 à 5 ans) et le stérilet (DIU). Le préservatif est la seule méthode qui protège aussi des IST et du VIH. Un agent de santé peut t'aider à choisir, en toute confidentialité.", "refer": true, "services": ["contraception"]}, {"id": "contra-02", "theme": "contraception", "question": "Le préservatif est-il efficace ?", "keywords": ["preservatif", "capote", "condom", "efficace preservatif"], "answer": "Oui, s'il est bien utilisé à chaque rapport, du début à la fin. Vérifie la date de péremption, ouvre l'emballage avec les doigts (pas avec les dents ni des ciseaux) et utilise un préservatif neuf à chaque rapport. C'est la seule méthode qui protège à la fois de la grossesse et des IST, dont le VIH.", "refer": true, "services": ["contraception", "depistage"]}, {"id": "contra-03", "theme": "contraception", "question": "Le préservatif a craqué, que faire ?", "keywords": ["craque", "dechire", "casse", "preservatif a craque", "glisse", "rate"], "answer": "Ne panique pas, il existe des solutions. Pour éviter une grossesse, la contraception d'urgence (pilule du lendemain) est à prendre le plus tôt possible, idéalement dans les 72 heures, et certaines jusqu'à 5 jours. Pour le VIH, un traitement d'urgence (PEP) existe : il faut aller au centre de santé dans les 72 heures. Pense aussi à un dépistage des IST.", "refer": true, "services": ["contraception-urgence", "pep", "depistage"]}, {"id": "contra-04", "theme": "contraception", "question": "C'est quoi la pilule du lendemain ?", "keywords": ["pilule du lendemain", "contraception d'urgence", "contraception urgence", "apres un rapport"], "answer": "C'est une contraception d'urgence à prendre après un rapport sans protection ou un échec de contraception, le plus tôt possible : idéalement dans les 72 heures, jusqu'à 5 jours pour certaines. Elle ne provoque pas d'avortement et ne rend pas stérile. Ce n'est pas une contraception régulière. Elle est disponible en pharmacie ou au centre de santé.", "refer": true, "services": ["contraception-urgence"]}, {"id": "contra-05", "theme": "contraception", "question": "La contraception rend-elle stérile ?", "keywords": ["sterile", "sterilite", "plus avoir d'enfants", "infertile", "rend sterile"], "answer": "Non. C'est une idée reçue très répandue. La pilule, l'implant, l'injection et le stérilet ne rendent pas stérile. Après l'arrêt, la fertilité revient : souvent très vite, parfois après quelques mois pour l'injection. Ce qui peut nuire à la fertilité, ce sont les IST non soignées.", "refer": true, "services": ["contraception"]}, {"id": "contra-06", "theme": "contraception", "question": "La pilule fait-elle grossir ?", "keywords": ["grossir", "prise de poids", "poids", "fait grossir"], "answer": "Les études montrent que la plupart des femmes ne prennent pas de poids à cause de la pilule. Certaines peuvent ressentir des effets passagers au début (seins sensibles, nausées). Si une méthode ne te convient pas, d'autres existent : parles-en à un agent de santé plutôt que d'arrêter sans solution.", "refer": true, "services": ["contraception"]}, {"id": "contra-07", "theme": "contraception", "question": "J'ai oublié ma pilule, que faire ?", "keywords": ["oublie pilule", "oubli", "oublie de prendre", "pilule oubliee"], "answer": "Prends le comprimé oublié dès que tu t'en rends compte, puis continue normalement. Selon le type de pilule et le temps écoulé, tu n'es peut-être plus protégée : utilise des préservatifs pendant 7 jours. Si tu as eu un rapport dans les jours précédents, une contraception d'urgence peut être nécessaire. La notice et le pharmacien peuvent te guider.", "refer": true, "services": ["contraception", "contraception-urgence"]}, {"id": "contra-08", "theme": "contraception", "question": "Le retrait est-il une bonne méthode ?", "keywords": ["retrait", "se retirer", "sortir avant", "methode naturelle", "calendrier", "jours fertiles"], "answer": "Le retrait et le calcul des jours sont peu fiables, surtout quand les cycles sont irréguliers, comme souvent chez les jeunes. Ils ne protègent pas non plus des IST. Pour éviter une grossesse, les méthodes modernes (préservatif, pilule, implant, injection, stérilet) sont beaucoup plus efficaces.", "refer": true, "services": ["contraception"]}, {"id": "contra-09", "theme": "contraception", "question": "Comment fonctionne l'implant ?", "keywords": ["implant", "batonnet", "bras"], "answer": "L'implant est un petit bâtonnet placé sous la peau du bras par un agent de santé. Il protège de la grossesse pendant 3 à 5 ans selon le modèle et peut être retiré à tout moment. Il peut modifier les règles (plus rares, irrégulières). Il ne protège pas des IST : le préservatif reste utile.", "refer": true, "services": ["contraception"]}, {"id": "contra-10", "theme": "contraception", "question": "Est-ce que je peux avoir une contraception sans le dire à mes parents ?", "keywords": ["parents", "sans le dire", "secret", "en cachette", "mineure", "sans que ma mere", "sans que mes parents", "sache", "ma mere"], "answer": "Les centres de santé et de planification familiale peuvent te recevoir et te conseiller de façon confidentielle. Si tu le peux, en parler à un adulte de confiance peut aussi t'aider. Un agent de santé t'expliquera les règles qui s'appliquent selon ton âge.", "refer": true, "services": ["contraception"]}, {"id": "ist-01", "theme": "ist", "question": "Comment savoir si j'ai une IST ?", "keywords": ["ist", "mst", "infection", "maladie sexuelle", "symptomes"], "answer": "Beaucoup d'IST ne donnent aucun symptôme. Quand il y en a : pertes inhabituelles, odeur forte, démangeaisons, brûlures en urinant, boutons ou plaies sur les parties intimes, douleurs au bas du ventre. Le seul moyen de savoir est de faire un dépistage. La plupart des IST se soignent facilement si elles sont traitées tôt.", "refer": true, "services": ["depistage"]}, {"id": "ist-02", "theme": "ist", "question": "Comment se transmet le VIH ?", "keywords": ["vih", "sida", "transmission", "attraper le vih", "se transmet"], "answer": "Le VIH se transmet par les rapports sexuels sans préservatif, par le sang (seringues ou objets coupants partagés) et de la mère à l'enfant pendant la grossesse, l'accouchement ou l'allaitement. Il ne se transmet pas par les bisous, les câlins, la toux, les moustiques ou en partageant un repas.", "refer": true, "services": ["depistage"]}, {"id": "ist-03", "theme": "ist", "question": "Où faire un test de dépistage ?", "keywords": ["depistage", "test vih", "faire un test", "me faire tester", "test ist", "faire un depistage", "depistage du vih", "ou faire"], "answer": "Le dépistage du VIH et des IST se fait dans les centres de santé, les hôpitaux et les centres de dépistage. Il est confidentiel et souvent gratuit pour le VIH. Le résultat du test rapide du VIH est connu en environ 20 minutes.", "refer": true, "services": ["depistage"]}, {"id": "ist-04", "theme": "ist", "question": "J'ai eu un rapport à risque, que faire tout de suite ?", "keywords": ["rapport a risque", "rapport non protege", "sans preservatif", "sans capote", "risque vih"], "answer": "Va au centre de santé ou aux urgences le plus vite possible. Dans les 72 heures, un traitement d'urgence (PEP) peut réduire fortement le risque de VIH. Une contraception d'urgence peut éviter une grossesse. Un dépistage des IST sera aussi proposé.", "refer": true, "services": ["pep", "contraception-urgence", "depistage"]}, {"id": "ist-05", "theme": "ist", "question": "Est-ce que les IST se soignent ?", "keywords": ["soigner", "guerir", "traitement", "se soigne", "antibiotique"], "answer": "Oui. Beaucoup d'IST (chlamydia, gonorrhée, syphilis, trichomonas) se guérissent avec un traitement prescrit par un agent de santé. Le VIH ne se guérit pas, mais le traitement permet de vivre longtemps et en bonne santé. Ne prends pas de médicaments sans avis médical, et fais aussi traiter ton ou ta partenaire.", "refer": true, "services": ["depistage", "consultation"]}, {"id": "ist-06", "theme": "ist", "question": "J'ai des pertes blanches, est-ce normal ?", "keywords": ["pertes", "pertes blanches", "ecoulement", "pertes vaginales", "odeur"], "answer": "Des pertes blanches ou transparentes sans odeur forte sont normales : elles nettoient le vagin. Consulte si elles changent de couleur (jaune, vert, gris), sentent fort, ou s'accompagnent de démangeaisons, de brûlures ou de douleurs. Évite les douches vaginales et les produits parfumés, qui déséquilibrent la flore.", "refer": true, "services": ["consultation"]}, {"id": "ist-07", "theme": "ist", "question": "C'est quoi le vaccin contre le HPV ?", "keywords": ["hpv", "papillomavirus", "vaccin", "cancer du col", "col de l'uterus"], "answer": "Le HPV est un virus très courant qui se transmet lors des rapports sexuels et peut provoquer, des années plus tard, un cancer du col de l'utérus. Le vaccin protège efficacement, idéalement avant les premiers rapports, généralement entre 9 et 14 ans. Le dépistage régulier du col est aussi recommandé chez les femmes adultes.", "refer": true, "services": ["vaccination", "consultation"]}, {"id": "ist-08", "theme": "ist", "question": "Peut-on avoir une IST dès le premier rapport ?", "keywords": ["premier rapport", "premiere fois", "vierge", "une seule fois"], "answer": "Oui. Une IST ou une grossesse sont possibles dès le premier rapport sexuel. Le préservatif protège dès la première fois.", "refer": true, "services": ["contraception", "depistage"]}, {"id": "gross-01", "theme": "grossesse", "question": "Comment savoir si je suis enceinte ?", "keywords": ["enceinte", "grossesse", "signes de grossesse", "suis-je enceinte", "symptomes grossesse", "pense que je suis enceinte", "peut-etre enceinte", "peur d etre enceinte", "crois que je suis enceinte"], "answer": "Les signes possibles sont : retard de règles, nausées, seins gonflés ou sensibles, fatigue, envie fréquente d'uriner. Seul un test peut le confirmer. Le test urinaire est fiable à partir du jour où les règles auraient dû arriver ; il est disponible en pharmacie ou au centre de santé.", "refer": true, "services": ["test-grossesse"]}, {"id": "gross-02", "theme": "grossesse", "question": "Je suis enceinte, que dois-je faire ?", "keywords": ["je suis enceinte", "test positif", "enceinte que faire", "tombe enceinte"], "answer": "Tu n'es pas seule. Va au centre de santé pour une première consultation le plus tôt possible : on vérifiera ta santé et on parlera avec toi de ta situation et de tes options. Si tu le peux, confie-toi à une personne de confiance. Évite tout produit ou méthode non médicale pour interrompre une grossesse : c'est très dangereux pour ta vie.", "refer": true, "services": ["consultation-prenatale", "consultation"]}, {"id": "gross-03", "theme": "grossesse", "question": "Combien de consultations prénatales faut-il faire ?", "keywords": ["consultation prenatale", "cpn", "suivi grossesse", "visites", "combien de consultations"], "answer": "L'OMS recommande au moins 8 contacts avec un agent de santé pendant la grossesse, le premier dès les 12 premières semaines. Ces visites permettent de vérifier ta santé et celle du bébé, de faire des examens, de recevoir du fer et de l'acide folique, et de préparer l'accouchement.", "refer": true, "services": ["consultation-prenatale"]}, {"id": "gross-04", "theme": "grossesse", "question": "Quels sont les signes de danger pendant la grossesse ?", "keywords": ["danger", "signes de danger", "grossesse saignement", "maux de tete", "bebe ne bouge", "fievre enceinte", "perte des eaux"], "answer": "Va immédiatement au centre de santé ou aux urgences si tu as : des saignements, de violents maux de tête ou des troubles de la vue, de la fièvre, des convulsions, une perte de liquide, de fortes douleurs au ventre, un gonflement soudain du visage ou des mains, ou si le bébé ne bouge plus ou beaucoup moins.", "refer": true, "services": ["urgence", "consultation-prenatale"]}, {"id": "gross-05", "theme": "grossesse", "question": "Quels sont les risques d'une grossesse à l'adolescence ?", "keywords": ["adolescence", "jeune enceinte", "grossesse precoce", "enceinte a 15 ans", "trop jeune"], "answer": "Une grossesse avant 18 ans comporte plus de risques pour la jeune mère et le bébé : anémie, hypertension, accouchement difficile, bébé de petit poids. Un suivi régulier dès le début réduit beaucoup ces risques. Une grossesse ne doit pas t'empêcher de poursuivre tes études : parles-en à un agent de santé et à une personne de confiance.", "refer": true, "services": ["consultation-prenatale"]}, {"id": "gross-06", "theme": "grossesse", "question": "Que manger pendant la grossesse ?", "keywords": ["manger", "alimentation", "nutrition", "enceinte manger", "fer", "acide folique"], "answer": "Mange varié : légumes, fruits, céréales, légumineuses, poisson, viande ou œufs bien cuits. Le fer et l'acide folique sont importants : ils sont donnés lors des consultations prénatales. Évite l'alcool, le tabac et les médicaments sans avis médical. Bois beaucoup d'eau potable.", "refer": true, "services": ["consultation-prenatale"]}, {"id": "gross-07", "theme": "grossesse", "question": "Peut-on tomber enceinte sans pénétration complète ?", "keywords": ["sans penetration", "juste frotter", "sperme", "pre-ejaculation", "liquide"], "answer": "C'est rare, mais possible si du sperme ou du liquide pré-éjaculatoire se trouve près de l'entrée du vagin. Pour éviter tout risque, utilise une contraception. En cas de doute, la contraception d'urgence peut être prise dans les jours qui suivent.", "refer": true, "services": ["contraception-urgence"]}, {"id": "gross-08", "theme": "grossesse", "question": "Où faire un test de grossesse ?", "keywords": ["test de grossesse", "ou faire un test", "acheter un test"], "answer": "Tu peux acheter un test urinaire en pharmacie ou faire un test au centre de santé, parfois gratuitement. Fais-le à partir du jour où tes règles auraient dû arriver. Si le résultat est négatif mais que tes règles n'arrivent toujours pas, refais un test quelques jours plus tard ou consulte.", "refer": true, "services": ["test-grossesse"]}, {"id": "rel-01", "theme": "relations", "question": "Est-ce que j'ai le droit de dire non ?", "keywords": ["dire non", "pas envie", "oblige", "pression", "insiste"], "answer": "Oui, toujours. Tu as le droit de refuser un rapport sexuel, à tout moment, même si tu as dit oui avant, même avec ton copain ou ton mari. Quelqu'un qui te force ou te menace commet une violence. Si tu es en danger, parles-en tout de suite à une personne de confiance ou contacte un service d'aide.", "refer": true, "services": ["violence"]}, {"id": "rel-02", "theme": "relations", "question": "Mon copain ne veut pas mettre de préservatif", "keywords": ["ne veut pas de preservatif", "refuse le preservatif", "refuse la capote", "sans capote il veut", "copain"], "answer": "Ta santé compte. Tu peux lui expliquer que le préservatif protège vous deux des IST et d'une grossesse non désirée, et refuser un rapport sans protection. Le préservatif féminin est aussi une option que tu contrôles. S'il te met la pression ou te menace, ce n'est pas une relation saine.", "refer": true, "services": ["contraception"]}, {"id": "rel-03", "theme": "relations", "question": "Un adulte beaucoup plus âgé me propose de l'argent ou des cadeaux", "keywords": ["argent", "cadeaux", "plus age", "vieux", "il me paye", "contre de l'argent"], "answer": "Une relation avec un adulte qui donne de l'argent ou des cadeaux en échange de relations sexuelles te met en danger : grossesse, IST, violences, et il peut abuser de son pouvoir. Si tu as moins de 18 ans, c'est une forme d'exploitation. Parles-en à une personne de confiance ou à un service d'aide. Tu n'es pas responsable.", "refer": true, "services": ["violence"]}, {"id": "rel-04", "theme": "relations", "question": "Comment parler de sexualité avec mes parents ?", "keywords": ["parler", "oser", "honte", "maman", "papa"], "answer": "Ce n'est pas toujours facile. Choisis un moment calme, commence par une question simple ou une information que tu as vue. Si ce n'est pas possible avec tes parents, une tante, une grande sœur, une enseignante ou un agent de santé peuvent t'écouter. Poser des questions sur ta santé est normal et responsable.", "refer": false, "services": []}, {"id": "bien-01", "theme": "bien-etre", "question": "Je me sens triste et stressée tout le temps", "keywords": ["triste", "stress", "stressee", "deprime", "angoisse", "seule", "pleure"], "answer": "Merci de l'avoir dit. Ce que tu ressens compte. Parler à une personne de confiance (amie, famille, enseignante, agent de santé) peut vraiment aider. Si ce sentiment dure plus de deux semaines ou t'empêche de vivre normalement, consulte un agent de santé. Si tu as des idées de te faire du mal, demande de l'aide tout de suite.", "refer": true, "services": ["ecoute"]}, {"id": "orient-01", "theme": "orientation", "question": "Où trouver un centre de santé pour les jeunes ?", "keywords": ["centre de sante", "ou aller", "hopital", "clinique", "planning familial", "pres de chez moi", "consulter"], "answer": "Tu peux consulter dans les centres de santé, les hôpitaux et les centres de planification familiale. Appuie sur « Trouver un service » pour voir la liste des lieux qui accueillent les jeunes de façon confidentielle.", "refer": true, "services": ["consultation"]}, {"id": "orient-02", "theme": "orientation", "question": "Est-ce que Iniva garde mes questions ?", "keywords": ["confidentiel", "garde mes questions", "donnees", "qui voit", "anonyme", "enregistre"], "answer": "Non. Iniva ne te demande ni ton nom ni ton numéro, et tes questions ne sont pas enregistrées. Quand tu fermes la page, la conversation disparaît. Iniva donne des informations générales et ne remplace pas une consultation.", "refer": false, "services": []}]};
+const SAFETY = {"status": "DRAFT - helpline numbers to be confirmed by APSAD before any public use", "crisis_rules": [{"id": "violence-sexuelle", "triggers": ["viol", "violee", "viole", "abus", "abusee", "agression sexuelle", "agressee", "force a coucher", "forcee", "inceste", "touchee sans", "attouchement"], "message": "Ce qui t'est arrivé n'est pas de ta faute. Tu as le droit d'être protégée et soignée. Si c'est récent, va au plus vite dans un centre de santé ou aux urgences : dans les 72 heures, des soins peuvent éviter une grossesse et le VIH. Parle à une personne de confiance et contacte un service d'aide ci-dessous."}, {"id": "violence", "triggers": ["frappe", "battue", "me bat", "coups", "menace", "violent", "violence", "peur de lui", "enfermee"], "message": "Personne n'a le droit de te frapper, de te menacer ou de te faire peur. Si tu es en danger maintenant, mets-toi en sécurité et appelle les secours. Une personne de confiance et les services d'aide ci-dessous peuvent t'accompagner."}, {"id": "suicide", "triggers": ["suicide", "me tuer", "mourir", "en finir", "plus envie de vivre", "me faire du mal", "me couper", "disparaitre"], "message": "Merci de me l'avoir écrit. Ce que tu ressens est important et tu mérites de l'aide maintenant. Parle tout de suite à une personne de confiance près de toi, ou va au centre de santé ou aux urgences le plus proche. Tu n'es pas seule."}, {"id": "urgence-medicale", "triggers": ["saigne beaucoup", "hemorragie", "convulsion", "evanouie", "perdu connaissance", "douleur tres forte", "plus respirer", "avale des medicaments"], "message": "Cela peut être une urgence médicale. Va immédiatement au centre de santé ou aux urgences le plus proche, ou demande à quelqu'un de t'y emmener."}], "contacts": [{"label": "Urgences médicales", "number": "[à confirmer par APSAD]"}, {"label": "Police", "number": "[à confirmer par APSAD]"}, {"label": "Ligne d'aide aux victimes de violences", "number": "[à confirmer par APSAD]"}, {"label": "APSAD — accompagnement", "number": "[à confirmer par APSAD]"}]};
+const CLINICS = {"status": "TEMPLATE - to be completed and verified by APSAD (Greater Libreville). Do not publish unverified entries.", "services_labels": {"consultation": "Consultation", "contraception": "Contraception", "contraception-urgence": "Contraception d'urgence", "depistage": "Dépistage IST et VIH", "pep": "Traitement d'urgence VIH (PEP)", "test-grossesse": "Test de grossesse", "consultation-prenatale": "Consultations prénatales", "vaccination": "Vaccination HPV", "violence": "Prise en charge des violences", "ecoute": "Écoute et soutien", "urgence": "Urgences"}, "clinics": [{"name": "[Centre de santé 1 — à compléter]", "area": "Libreville", "address": "[adresse]", "phone": "[téléphone]", "hours": "[horaires]", "youth_friendly": true, "free_services": ["depistage"], "services": ["consultation", "contraception", "depistage", "test-grossesse"]}, {"name": "[Hôpital 1 — à compléter]", "area": "Libreville", "address": "[adresse]", "phone": "[téléphone]", "hours": "24h/24", "youth_friendly": false, "free_services": [], "services": ["urgence", "pep", "contraception-urgence", "violence", "consultation-prenatale"]}, {"name": "[Centre de planification familiale — à compléter]", "area": "Owendo", "address": "[adresse]", "phone": "[téléphone]", "hours": "[horaires]", "youth_friendly": true, "free_services": ["contraception"], "services": ["contraception", "contraception-urgence", "consultation", "vaccination"]}, {"name": "[Centre de santé 2 — à compléter]", "area": "Akanda", "address": "[adresse]", "phone": "[téléphone]", "hours": "[horaires]", "youth_friendly": true, "free_services": [], "services": ["consultation", "consultation-prenatale", "depistage", "ecoute"]}]};
+
+const $ = s => document.querySelector(s);
+const main = $("#main");
+const TEST = location.hash === "#test";
+const stats = {questions:0, answered:0, unmatched:0, crisis:0, helpful:0, notHelpful:0, byTopic:{}};
+const STOP = new Set("le la les un une des de du d l et ou a au aux en est ce que qui quoi je j me m mon ma mes tu te t ton ta tes il elle on nous vous ils elles se s sa son ses pour par avec sans dans sur pas ne n y c ca cela suis es etre avoir ai as fait faire comment pourquoi quand quel quelle quels quelles plus tres bien".split(" "));
+
+function norm(t){return (" "+t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’'`]/g," ").replace(/[^a-z0-9\s-]/g," ").replace(/\s+/g," ")+" ");}
+function tokens(t){return norm(t).trim().split(" ").filter(w=>w.length>1&&!STOP.has(w));}
+
+function crisisCheck(text){
+  const n = norm(text);
+  for (const r of SAFETY.crisis_rules){ if (r.triggers.some(k => n.includes(" "+norm(k).trim()))) return r; }
+  return null;
+}
+function search(text){
+  const n = norm(text), tk = new Set(tokens(text));
+  const scored = KB.entries.map(e=>{
+    let s = 0;
+    for (const k of e.keywords){ const nk = norm(k).trim(); if (n.includes(" "+nk)) s += 1 + nk.split(" ").length; }
+    for (const w of tokens(e.question)) if (tk.has(w)) s += 0.75;
+    return {e, s};
+  }).sort((a,b)=>b.s-a.s);
+  return scored;
+}
+
+function el(tag, attrs={}, ...kids){const x=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")x.className=v;else if(k.startsWith("on"))x.addEventListener(k.slice(2),v);else x.setAttribute(k,v);}for(const c of kids){if(c==null)continue;x.append(c.nodeType?c:document.createTextNode(c));}return x;}
+
+function renderGate(){
+  let age = null;
+  main.innerHTML = "";
+  const ages = el("div",{class:"ages",role:"group","aria-label":"Ton âge"});
+  const btn = el("button",{class:"primary",disabled:""},"Commencer");
+  const consent = el("input",{type:"checkbox",id:"consent"});
+  const refresh = ()=>{ btn.disabled = !(age === "18-24" && consent.checked); };
+  [["moins de 18 ans","u15"],["18 à 24 ans","18-24"],["25 ans et plus","25+"]].forEach(([label,val])=>{
+    const b = el("button",{"aria-pressed":"false",onclick:()=>{age=val;ages.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));refresh();}},label);
+    ages.append(b);
+  });
+  consent.addEventListener("change",refresh);
+  btn.addEventListener("click",()=>{ if(age!=="18-24" || !consent.checked) return; renderChat(age); });
+  main.append(el("section",{class:"gate"},
+    el("h2",{},"Pose tes questions sur les règles, la contraception, les IST et la grossesse."),
+    el("p",{},"Iniva répond avec des informations de santé claires et t'indique où trouver de l'aide près de chez toi."),
+    el("ul",{class:"promise"},
+      el("li",{},"Pas de nom, pas de numéro de téléphone."),
+      el("li",{},"Tes questions ne sont pas enregistrées : tout disparaît quand tu fermes la page."),
+      el("li",{},"Iniva ne remplace pas une consultation. En cas d'urgence, va au centre de santé.")),
+    el("p",{style:"font-weight:800;margin-top:18px"},"Quel âge as-tu ?"), ages,
+    el("label",{class:"consent",for:"consent"}, consent, el("span",{},"J'ai compris comment fonctionne Iniva et je veux continuer.")),
+    btn));
+}
+function renderUnder15(){
+  main.innerHTML="";
+  main.append(el("section",{class:"gate"},
+    el("h2",{},"Ce test est réservé aux 18 à 24 ans."),
+    el("p",{},"Tes questions sont importantes. Pour en parler, tu peux te tourner vers un adulte de confiance : un parent, une tante, une enseignante, l'infirmière scolaire ou un agent de santé."),
+    el("p",{},"Si quelqu'un te fait du mal ou te force à faire quelque chose, ce n'est pas de ta faute. Parles-en tout de suite à un adulte de confiance ou appelle un de ces numéros :"),
+    contactList(), el("button",{class:"primary",onclick:renderGate},"Revenir")));
+}
+function contactList(){const verified=SAFETY.contacts.filter(c=>!c.number.includes("[")); return verified.length?el("ul",{class:"contacts"},...verified.map(c=>el("li",{},el("span",{},c.label),el("strong",{},c.number)))):el("p",{},"Coordonnées d’urgence en cours de confirmation par APSAD. En cas de danger immédiat, rendez-vous aux urgences ou sollicitez une personne de confiance.");}
+
+let thread;
+function renderChat(age){
+  main.innerHTML="";
+  thread = el("div",{class:"thread","aria-live":"polite"});
+  const starters = el("div",{class:"starters"});
+  ["Mes règles sont en retard","Le préservatif a craqué","Comment savoir si j'ai une IST ?","La contraception rend-elle stérile ?","Où trouver un centre de santé ?"].forEach(s=>starters.append(el("button",{class:"chip",onclick:()=>ask(s)},s)));
+  main.append(el("div",{class:"msg bot"},"Bonjour ! Pose ta question avec tes mots. Tu peux aussi choisir un sujet :"), starters, thread);
+  const input = el("input",{type:"text",placeholder:"Écris ta question…","aria-label":"Ta question",maxlength:"300",autocomplete:"off"});
+  const send = el("button",{type:"button"},"Envoyer");
+  const go = ()=>{const v=input.value.trim(); if(v){input.value=""; ask(v);} input.focus();};
+  send.addEventListener("click",go); input.addEventListener("keydown",e=>{if(e.key==="Enter")go();});
+  document.querySelector(".compose")?.remove(); document.querySelector(".note")?.remove();
+  document.querySelector(".app").append(el("div",{class:"compose"},input,send), el("p",{class:"note"},"Informations générales. Ne remplace pas un avis médical."));
+}
+
+async function ask(text){
+  thread.append(el("div",{class:"msg me"},text));
+  stats.questions++;
+  const c = crisisCheck(text);
+  if (c){ stats.crisis++; showCrisis(c); updateStats(); return; }
+  const res = search(text);
+  const best = res[0];
+  if (!best || best.s < 2){ stats.unmatched++; showFallback(res); updateStats(); return; }
+  stats.answered++; stats.byTopic[best.e.id]=(stats.byTopic[best.e.id]||0)+1;
+  let answer = best.e.answer, viaLLM = false;
+  if (INIVA_CONFIG.llmEndpoint){ try { answer = await llmAnswer(text, res.slice(0,3).map(r=>r.e)); viaLLM = true; } catch(e){ /* fall back to retrieval */ } }
+  showAnswer(best.e, answer, res.slice(1,3).filter(r=>r.s>=2).map(r=>r.e), viaLLM);
+  updateStats();
+}
+
+async function llmAnswer(question, entries){
+  const context = entries.map(e=>"- "+e.question+" : "+e.answer).join("\n");
+  const r = await fetch(INIVA_CONFIG.llmEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:INIVA_CONFIG.llmModel,stream:false,messages:[
+    {role:"system",content:"Tu es Iniva, un assistant d'information en santé sexuelle et reproductive pour des jeunes femmes de 18 à 24 ans au Gabon. Réponds en français simple, avec bienveillance, en 4 phrases maximum, UNIQUEMENT à partir des informations validées ci-dessous. Si elles ne suffisent pas, dis-le et conseille de consulter un agent de santé. Ne pose jamais de diagnostic et ne donne jamais de dose de médicament.\n\nInformations validées :\n"+context},
+    {role:"user",content:question}]})});
+  if(!r.ok) throw new Error("LLM error"); const d = await r.json(); return d.message.content.trim();
+}
+
+function statusBadge(){
+  return INIVA_CONFIG.contentValidated
+    ? el("span",{class:"status ok"},"Contenu médical validé par "+INIVA_CONFIG.validatedBy)
+    : el("span",{class:"status"},"Prototype : contenu en cours de validation médicale");
+}
+function showAnswer(e, answer, related, viaLLM){
+  const box = el("div",{class:"msg bot"}, el("p",{class:"q"},e.question), answer);
+  box.append(el("br"), statusBadge());
+  const actions = el("div",{class:"actions"});
+  if (e.services.length) actions.append(el("button",{onclick:()=>openClinics(e.services)},"Trouver un service"));
+  const yes = el("button",{class:"fb","aria-pressed":"false"},"Ça m'a aidée"), no = el("button",{class:"fb","aria-pressed":"false"},"Pas vraiment");
+  let voted=false; const vote=(b,good)=>{ if(voted)return; voted=true; b.setAttribute("aria-pressed","true"); good?stats.helpful++:stats.notHelpful++; updateStats(); };
+  yes.addEventListener("click",()=>vote(yes,true)); no.addEventListener("click",()=>vote(no,false));
+  actions.append(yes,no); box.append(actions);
+  if (related.length){ const rel=el("div",{class:"related"},"Questions proches :"); related.forEach(r=>rel.append(el("button",{onclick:()=>ask(r.question)},r.question))); box.append(rel); }
+  thread.append(box); box.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showFallback(res){
+  const box = el("div",{class:"msg bot"},"Je n'ai pas encore de réponse vérifiée à cette question. Tu peux la reformuler, choisir une question proche, ou en parler à un agent de santé.");
+  const rel = el("div",{class:"related"},"Questions proches :");
+  res.slice(0,3).forEach(r=>rel.append(el("button",{onclick:()=>ask(r.e.question)},r.e.question)));
+  box.append(rel, el("div",{class:"actions"},el("button",{onclick:()=>openClinics(["consultation"])},"Trouver un service")));
+  thread.append(box); box.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showCrisis(rule){
+  const box = el("div",{class:"msg bot crisis",role:"alert"}, el("h3",{},"Tu n'es pas seule"), rule.message, contactList(),
+    el("div",{class:"actions"}, el("button",{onclick:()=>openClinics(rule.id==="suicide"?["ecoute","urgence"]:["violence","urgence"])},"Trouver un service")));
+  thread.append(box); box.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function openClinics(services){
+  const L = CLINICS.services_labels;
+  const list = CLINICS.clinics.filter(c=>!c.name.startsWith("[") && !c.address.startsWith("[") && c.services.some(s=>services.includes(s)));
+  const panel = $("#panel"); panel.innerHTML="";
+  panel.append(el("button",{class:"close",onclick:closeSheet},"Fermer"), el("h2",{id:"sheetTitle"},"Trouver un service"),
+    el("p",{style:"color:var(--muted);margin:0"},"Recherché : "+services.map(s=>L[s]||s).join(", ")));
+  if(!list.length){panel.append(el("p",{},"La liste des centres est en cours de vérification par APSAD. En cas de besoin, contactez directement un établissement de santé de votre choix."));}
+  list.forEach(c=>{
+    const card = el("div",{class:"clinic"}, el("h3",{},c.name), el("p",{},c.area+", "+c.address), el("p",{},c.hours+" — "+c.phone));
+    if (c.youth_friendly) card.append(el("span",{class:"tag"},"Accueil des jeunes"));
+    c.services.forEach(s=>card.append(el("span",{class:"tag"},L[s]||s)));
+    panel.append(card);
+  });
+  panel.append(el("p",{class:"note"},"Liste en cours de vérification par APSAD."));
+  $("#sheet").classList.add("open"); panel.querySelector(".close").focus();
+}
+function closeSheet(){ $("#sheet").classList.remove("open"); }
+$("#sheet").addEventListener("click",e=>{ if(e.target.id==="sheet") closeSheet(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeSheet(); });
+$("#exit").addEventListener("click",()=>{ document.body.innerHTML=""; location.replace("https://www.google.com"); });
+
+function updateStats(){
+  if(!TEST) return;
+  const pct = (stats.helpful+stats.notHelpful) ? Math.round(100*stats.helpful/(stats.helpful+stats.notHelpful)) : 0;
+  $("#stats").textContent = `${stats.questions} questions, ${stats.answered} avec réponse, ${stats.unmatched} sans réponse, ${stats.crisis} alertes, ${pct} % « ça m'a aidée » (${stats.helpful+stats.notHelpful} votes)`;
+}
+if (TEST){
+  $("#testbar").classList.add("on");
+  $("#export").addEventListener("click",()=>{
+    const rows=[["indicateur","valeur"],["questions",stats.questions],["avec_reponse",stats.answered],["sans_reponse",stats.unmatched],["alertes_securite",stats.crisis],["vote_aidee",stats.helpful],["vote_pas_vraiment",stats.notHelpful],...Object.entries(stats.byTopic).map(([k,v])=>["sujet:"+k,v])];
+    const blob=new Blob([rows.map(r=>r.join(",")).join("\n")],{type:"text/csv"}); const a=el("a",{href:URL.createObjectURL(blob),download:"iniva_test_"+new Date().toISOString().slice(0,10)+".csv"}); document.body.append(a); a.click(); a.remove();
+  });
+  updateStats();
+}
+renderGate();
+</script>
+</body>
+</html>
