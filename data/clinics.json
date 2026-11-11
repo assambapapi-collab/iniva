@@ -1,0 +1,10 @@
+{
+ "status": "TEMPLATE - to be completed and verified by APSAD (Greater Libreville). Do not publish unverified entries.",
+ "services_labels": {"consultation":"Consultation","contraception":"Contraception","contraception-urgence":"Contraception d'urgence","depistage":"Dépistage IST et VIH","pep":"Traitement d'urgence VIH (PEP)","test-grossesse":"Test de grossesse","consultation-prenatale":"Consultations prénatales","vaccination":"Vaccination HPV","violence":"Prise en charge des violences","ecoute":"Écoute et soutien","urgence":"Urgences"},
+ "clinics": [
+  {"name":"[Centre de santé 1 — à compléter]","area":"Libreville","address":"[adresse]","phone":"[téléphone]","hours":"[horaires]","youth_friendly":true,"free_services":["depistage"],"services":["consultation","contraception","depistage","test-grossesse"]},
+  {"name":"[Hôpital 1 — à compléter]","area":"Libreville","address":"[adresse]","phone":"[téléphone]","hours":"24h/24","youth_friendly":false,"free_services":[],"services":["urgence","pep","contraception-urgence","violence","consultation-prenatale"]},
+  {"name":"[Centre de planification familiale — à compléter]","area":"Owendo","address":"[adresse]","phone":"[téléphone]","hours":"[horaires]","youth_friendly":true,"free_services":["contraception"],"services":["contraception","contraception-urgence","consultation","vaccination"]},
+  {"name":"[Centre de santé 2 — à compléter]","area":"Akanda","address":"[adresse]","phone":"[téléphone]","hours":"[horaires]","youth_friendly":true,"free_services":[],"services":["consultation","consultation-prenatale","depistage","ecoute"]}
+ ]
+}

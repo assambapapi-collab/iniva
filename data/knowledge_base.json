@@ -1,0 +1,724 @@
+{
+  "version": "0.1.0",
+  "status": "Validation médicale APSAD déclarée le 10/11/2026 — pièce d’approbation signée à archiver",
+  "language": "fr",
+  "entries": [
+    {
+      "id": "regles-01",
+      "theme": "regles",
+      "question": "Est-ce normal que mes règles soient irrégulières ?",
+      "keywords": [
+        "irregulier",
+        "irregulieres",
+        "pas regulier",
+        "cycle",
+        "decale",
+        "chaque mois",
+        "pas le meme jour"
+      ],
+      "answer": "Oui, c'est fréquent, surtout dans les deux à trois premières années après les premières règles : le corps met du temps à trouver son rythme. Un cycle de 21 à 45 jours est courant chez les adolescentes. Si tes règles restent très irrégulières après quelques années, ou si elles s'arrêtent plusieurs mois, parles-en à un agent de santé.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "regles-02",
+      "theme": "regles",
+      "question": "J'ai du retard dans mes règles, que faire ?",
+      "keywords": [
+        "retard",
+        "pas eu mes regles",
+        "regles en retard",
+        "pas vu mes regles",
+        "toujours pas"
+      ],
+      "answer": "Un retard peut venir du stress, de la fatigue, d'une maladie ou d'un changement de poids. Mais si tu as eu un rapport sexuel sans préservatif ou si la contraception a pu échouer, une grossesse est possible : fais un test de grossesse dès le jour où tes règles auraient dû arriver. Le test est disponible en pharmacie ou au centre de santé.",
+      "refer": true,
+      "services": [
+        "test-grossesse",
+        "consultation"
+      ]
+    },
+    {
+      "id": "regles-03",
+      "theme": "regles",
+      "question": "Mes règles me font très mal, c'est normal ?",
+      "keywords": [
+        "douleur",
+        "mal au ventre",
+        "crampes",
+        "douleurs de regles",
+        "mal pendant les regles",
+        "dysmenorrhee"
+      ],
+      "answer": "Des douleurs au bas du ventre pendant les règles sont fréquentes. Une bouillotte, du repos et un antidouleur courant conseillé par un pharmacien peuvent aider. Si la douleur t'empêche d'aller à l'école ou de faire tes activités, ou si elle ne passe pas avec un antidouleur, consulte : cela peut se soigner.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "regles-04",
+      "theme": "regles",
+      "question": "Combien de temps durent les règles normalement ?",
+      "keywords": [
+        "combien de jours",
+        "duree",
+        "durent",
+        "longtemps",
+        "jours de regles"
+      ],
+      "answer": "Les règles durent en général de 2 à 7 jours. Si elles durent plus de 7 jours, si tu dois changer de protection toutes les heures, ou si tu as des vertiges, consulte un agent de santé : des règles très abondantes peuvent fatiguer et causer une anémie.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "regles-05",
+      "theme": "regles",
+      "question": "À quel âge arrivent les premières règles ?",
+      "keywords": [
+        "premieres regles",
+        "quel age",
+        "pas encore eu",
+        "jamais eu",
+        "puberte"
+      ],
+      "answer": "Les premières règles arrivent le plus souvent entre 9 et 16 ans. Chaque corps a son rythme. Si tu n'as pas encore eu tes règles à 16 ans, ou s'il n'y a aucun signe de puberté à 14 ans, une consultation permet de vérifier que tout va bien.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "regles-06",
+      "theme": "regles",
+      "question": "Combien de temps garder une serviette ou un tampon ?",
+      "keywords": [
+        "serviette",
+        "tampon",
+        "protection",
+        "changer",
+        "coupe menstruelle",
+        "hygiene"
+      ],
+      "answer": "Change ta serviette toutes les 4 à 6 heures, ou plus souvent si le flux est abondant. Un tampon ne doit jamais rester plus de 8 heures. Lave-toi les mains avant et après. Si tu n'as pas accès à des protections, parles-en à l'infirmière scolaire ou au centre de santé : des solutions existent.",
+      "refer": false,
+      "services": []
+    },
+    {
+      "id": "regles-07",
+      "theme": "regles",
+      "question": "Est-ce que je peux tomber enceinte pendant mes règles ?",
+      "keywords": [
+        "enceinte pendant les regles",
+        "rapport pendant les regles",
+        "enceinte pendant mes regles"
+      ],
+      "answer": "C'est moins probable, mais c'est possible, surtout si tes cycles sont courts ou irréguliers. Il n'existe pas de période totalement sans risque. Le préservatif ou une autre contraception reste nécessaire à chaque rapport.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "regles-08",
+      "theme": "regles",
+      "question": "J'ai des saignements en dehors de mes règles",
+      "keywords": [
+        "saignement entre",
+        "saigne en dehors",
+        "spotting",
+        "pertes de sang",
+        "saignements"
+      ],
+      "answer": "De petits saignements entre les règles peuvent arriver, par exemple au début d'une contraception hormonale. Mais des saignements répétés, après un rapport ou accompagnés de douleurs ou de fièvre doivent être examinés par un agent de santé. Si tu saignes beaucoup, va tout de suite au centre de santé ou aux urgences.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "contra-01",
+      "theme": "contraception",
+      "question": "Quelles sont les méthodes de contraception ?",
+      "keywords": [
+        "contraception",
+        "methodes",
+        "eviter grossesse",
+        "ne pas tomber enceinte",
+        "moyens"
+      ],
+      "answer": "Les principales méthodes sont : le préservatif masculin ou féminin, la pilule, l'injection tous les trois mois, l'implant sous la peau du bras (3 à 5 ans) et le stérilet (DIU). Le préservatif est la seule méthode qui protège aussi des IST et du VIH. Un agent de santé peut t'aider à choisir, en toute confidentialité.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "contra-02",
+      "theme": "contraception",
+      "question": "Le préservatif est-il efficace ?",
+      "keywords": [
+        "preservatif",
+        "capote",
+        "condom",
+        "efficace preservatif"
+      ],
+      "answer": "Oui, s'il est bien utilisé à chaque rapport, du début à la fin. Vérifie la date de péremption, ouvre l'emballage avec les doigts (pas avec les dents ni des ciseaux) et utilise un préservatif neuf à chaque rapport. C'est la seule méthode qui protège à la fois de la grossesse et des IST, dont le VIH.",
+      "refer": true,
+      "services": [
+        "contraception",
+        "depistage"
+      ]
+    },
+    {
+      "id": "contra-03",
+      "theme": "contraception",
+      "question": "Le préservatif a craqué, que faire ?",
+      "keywords": [
+        "craque",
+        "dechire",
+        "casse",
+        "preservatif a craque",
+        "glisse",
+        "rate"
+      ],
+      "answer": "Ne panique pas, il existe des solutions. Pour éviter une grossesse, la contraception d'urgence (pilule du lendemain) est à prendre le plus tôt possible, idéalement dans les 72 heures, et certaines jusqu'à 5 jours. Pour le VIH, un traitement d'urgence (PEP) existe : il faut aller au centre de santé dans les 72 heures. Pense aussi à un dépistage des IST.",
+      "refer": true,
+      "services": [
+        "contraception-urgence",
+        "pep",
+        "depistage"
+      ]
+    },
+    {
+      "id": "contra-04",
+      "theme": "contraception",
+      "question": "C'est quoi la pilule du lendemain ?",
+      "keywords": [
+        "pilule du lendemain",
+        "contraception d'urgence",
+        "contraception urgence",
+        "apres un rapport"
+      ],
+      "answer": "C'est une contraception d'urgence à prendre après un rapport sans protection ou un échec de contraception, le plus tôt possible : idéalement dans les 72 heures, jusqu'à 5 jours pour certaines. Elle ne provoque pas d'avortement et ne rend pas stérile. Ce n'est pas une contraception régulière. Elle est disponible en pharmacie ou au centre de santé.",
+      "refer": true,
+      "services": [
+        "contraception-urgence"
+      ]
+    },
+    {
+      "id": "contra-05",
+      "theme": "contraception",
+      "question": "La contraception rend-elle stérile ?",
+      "keywords": [
+        "sterile",
+        "sterilite",
+        "plus avoir d'enfants",
+        "infertile",
+        "rend sterile"
+      ],
+      "answer": "Non. C'est une idée reçue très répandue. La pilule, l'implant, l'injection et le stérilet ne rendent pas stérile. Après l'arrêt, la fertilité revient : souvent très vite, parfois après quelques mois pour l'injection. Ce qui peut nuire à la fertilité, ce sont les IST non soignées.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "contra-06",
+      "theme": "contraception",
+      "question": "La pilule fait-elle grossir ?",
+      "keywords": [
+        "grossir",
+        "prise de poids",
+        "poids",
+        "fait grossir"
+      ],
+      "answer": "Les études montrent que la plupart des femmes ne prennent pas de poids à cause de la pilule. Certaines peuvent ressentir des effets passagers au début (seins sensibles, nausées). Si une méthode ne te convient pas, d'autres existent : parles-en à un agent de santé plutôt que d'arrêter sans solution.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "contra-07",
+      "theme": "contraception",
+      "question": "J'ai oublié ma pilule, que faire ?",
+      "keywords": [
+        "oublie pilule",
+        "oubli",
+        "oublie de prendre",
+        "pilule oubliee"
+      ],
+      "answer": "Prends le comprimé oublié dès que tu t'en rends compte, puis continue normalement. Selon le type de pilule et le temps écoulé, tu n'es peut-être plus protégée : utilise des préservatifs pendant 7 jours. Si tu as eu un rapport dans les jours précédents, une contraception d'urgence peut être nécessaire. La notice et le pharmacien peuvent te guider.",
+      "refer": true,
+      "services": [
+        "contraception",
+        "contraception-urgence"
+      ]
+    },
+    {
+      "id": "contra-08",
+      "theme": "contraception",
+      "question": "Le retrait est-il une bonne méthode ?",
+      "keywords": [
+        "retrait",
+        "se retirer",
+        "sortir avant",
+        "methode naturelle",
+        "calendrier",
+        "jours fertiles"
+      ],
+      "answer": "Le retrait et le calcul des jours sont peu fiables, surtout quand les cycles sont irréguliers, comme souvent chez les jeunes. Ils ne protègent pas non plus des IST. Pour éviter une grossesse, les méthodes modernes (préservatif, pilule, implant, injection, stérilet) sont beaucoup plus efficaces.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "contra-09",
+      "theme": "contraception",
+      "question": "Comment fonctionne l'implant ?",
+      "keywords": [
+        "implant",
+        "batonnet",
+        "bras"
+      ],
+      "answer": "L'implant est un petit bâtonnet placé sous la peau du bras par un agent de santé. Il protège de la grossesse pendant 3 à 5 ans selon le modèle et peut être retiré à tout moment. Il peut modifier les règles (plus rares, irrégulières). Il ne protège pas des IST : le préservatif reste utile.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "contra-10",
+      "theme": "contraception",
+      "question": "Est-ce que je peux avoir une contraception sans le dire à mes parents ?",
+      "keywords": [
+        "parents",
+        "sans le dire",
+        "secret",
+        "en cachette",
+        "mineure",
+        "sans que ma mere",
+        "sans que mes parents",
+        "sache",
+        "ma mere"
+      ],
+      "answer": "Les centres de santé et de planification familiale peuvent te recevoir et te conseiller de façon confidentielle. Si tu le peux, en parler à un adulte de confiance peut aussi t'aider. Un agent de santé t'expliquera les règles qui s'appliquent selon ton âge.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "ist-01",
+      "theme": "ist",
+      "question": "Comment savoir si j'ai une IST ?",
+      "keywords": [
+        "ist",
+        "mst",
+        "infection",
+        "maladie sexuelle",
+        "symptomes"
+      ],
+      "answer": "Beaucoup d'IST ne donnent aucun symptôme. Quand il y en a : pertes inhabituelles, odeur forte, démangeaisons, brûlures en urinant, boutons ou plaies sur les parties intimes, douleurs au bas du ventre. Le seul moyen de savoir est de faire un dépistage. La plupart des IST se soignent facilement si elles sont traitées tôt.",
+      "refer": true,
+      "services": [
+        "depistage"
+      ]
+    },
+    {
+      "id": "ist-02",
+      "theme": "ist",
+      "question": "Comment se transmet le VIH ?",
+      "keywords": [
+        "vih",
+        "sida",
+        "transmission",
+        "attraper le vih",
+        "se transmet"
+      ],
+      "answer": "Le VIH se transmet par les rapports sexuels sans préservatif, par le sang (seringues ou objets coupants partagés) et de la mère à l'enfant pendant la grossesse, l'accouchement ou l'allaitement. Il ne se transmet pas par les bisous, les câlins, la toux, les moustiques ou en partageant un repas.",
+      "refer": true,
+      "services": [
+        "depistage"
+      ]
+    },
+    {
+      "id": "ist-03",
+      "theme": "ist",
+      "question": "Où faire un test de dépistage ?",
+      "keywords": [
+        "depistage",
+        "test vih",
+        "faire un test",
+        "me faire tester",
+        "test ist",
+        "faire un depistage",
+        "depistage du vih",
+        "ou faire"
+      ],
+      "answer": "Le dépistage du VIH et des IST se fait dans les centres de santé, les hôpitaux et les centres de dépistage. Il est confidentiel et souvent gratuit pour le VIH. Le résultat du test rapide du VIH est connu en environ 20 minutes.",
+      "refer": true,
+      "services": [
+        "depistage"
+      ]
+    },
+    {
+      "id": "ist-04",
+      "theme": "ist",
+      "question": "J'ai eu un rapport à risque, que faire tout de suite ?",
+      "keywords": [
+        "rapport a risque",
+        "rapport non protege",
+        "sans preservatif",
+        "sans capote",
+        "risque vih"
+      ],
+      "answer": "Va au centre de santé ou aux urgences le plus vite possible. Dans les 72 heures, un traitement d'urgence (PEP) peut réduire fortement le risque de VIH. Une contraception d'urgence peut éviter une grossesse. Un dépistage des IST sera aussi proposé.",
+      "refer": true,
+      "services": [
+        "pep",
+        "contraception-urgence",
+        "depistage"
+      ]
+    },
+    {
+      "id": "ist-05",
+      "theme": "ist",
+      "question": "Est-ce que les IST se soignent ?",
+      "keywords": [
+        "soigner",
+        "guerir",
+        "traitement",
+        "se soigne",
+        "antibiotique"
+      ],
+      "answer": "Oui. Beaucoup d'IST (chlamydia, gonorrhée, syphilis, trichomonas) se guérissent avec un traitement prescrit par un agent de santé. Le VIH ne se guérit pas, mais le traitement permet de vivre longtemps et en bonne santé. Ne prends pas de médicaments sans avis médical, et fais aussi traiter ton ou ta partenaire.",
+      "refer": true,
+      "services": [
+        "depistage",
+        "consultation"
+      ]
+    },
+    {
+      "id": "ist-06",
+      "theme": "ist",
+      "question": "J'ai des pertes blanches, est-ce normal ?",
+      "keywords": [
+        "pertes",
+        "pertes blanches",
+        "ecoulement",
+        "pertes vaginales",
+        "odeur"
+      ],
+      "answer": "Des pertes blanches ou transparentes sans odeur forte sont normales : elles nettoient le vagin. Consulte si elles changent de couleur (jaune, vert, gris), sentent fort, ou s'accompagnent de démangeaisons, de brûlures ou de douleurs. Évite les douches vaginales et les produits parfumés, qui déséquilibrent la flore.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "ist-07",
+      "theme": "ist",
+      "question": "C'est quoi le vaccin contre le HPV ?",
+      "keywords": [
+        "hpv",
+        "papillomavirus",
+        "vaccin",
+        "cancer du col",
+        "col de l'uterus"
+      ],
+      "answer": "Le HPV est un virus très courant qui se transmet lors des rapports sexuels et peut provoquer, des années plus tard, un cancer du col de l'utérus. Le vaccin protège efficacement, idéalement avant les premiers rapports, généralement entre 9 et 14 ans. Le dépistage régulier du col est aussi recommandé chez les femmes adultes.",
+      "refer": true,
+      "services": [
+        "vaccination",
+        "consultation"
+      ]
+    },
+    {
+      "id": "ist-08",
+      "theme": "ist",
+      "question": "Peut-on avoir une IST dès le premier rapport ?",
+      "keywords": [
+        "premier rapport",
+        "premiere fois",
+        "vierge",
+        "une seule fois"
+      ],
+      "answer": "Oui. Une IST ou une grossesse sont possibles dès le premier rapport sexuel. Le préservatif protège dès la première fois.",
+      "refer": true,
+      "services": [
+        "contraception",
+        "depistage"
+      ]
+    },
+    {
+      "id": "gross-01",
+      "theme": "grossesse",
+      "question": "Comment savoir si je suis enceinte ?",
+      "keywords": [
+        "enceinte",
+        "grossesse",
+        "signes de grossesse",
+        "suis-je enceinte",
+        "symptomes grossesse",
+        "pense que je suis enceinte",
+        "peut-etre enceinte",
+        "peur d etre enceinte",
+        "crois que je suis enceinte"
+      ],
+      "answer": "Les signes possibles sont : retard de règles, nausées, seins gonflés ou sensibles, fatigue, envie fréquente d'uriner. Seul un test peut le confirmer. Le test urinaire est fiable à partir du jour où les règles auraient dû arriver ; il est disponible en pharmacie ou au centre de santé.",
+      "refer": true,
+      "services": [
+        "test-grossesse"
+      ]
+    },
+    {
+      "id": "gross-02",
+      "theme": "grossesse",
+      "question": "Je suis enceinte, que dois-je faire ?",
+      "keywords": [
+        "je suis enceinte",
+        "test positif",
+        "enceinte que faire",
+        "tombe enceinte"
+      ],
+      "answer": "Tu n'es pas seule. Va au centre de santé pour une première consultation le plus tôt possible : on vérifiera ta santé et on parlera avec toi de ta situation et de tes options. Si tu le peux, confie-toi à une personne de confiance. Évite tout produit ou méthode non médicale pour interrompre une grossesse : c'est très dangereux pour ta vie.",
+      "refer": true,
+      "services": [
+        "consultation-prenatale",
+        "consultation"
+      ]
+    },
+    {
+      "id": "gross-03",
+      "theme": "grossesse",
+      "question": "Combien de consultations prénatales faut-il faire ?",
+      "keywords": [
+        "consultation prenatale",
+        "cpn",
+        "suivi grossesse",
+        "visites",
+        "combien de consultations"
+      ],
+      "answer": "L'OMS recommande au moins 8 contacts avec un agent de santé pendant la grossesse, le premier dès les 12 premières semaines. Ces visites permettent de vérifier ta santé et celle du bébé, de faire des examens, de recevoir du fer et de l'acide folique, et de préparer l'accouchement.",
+      "refer": true,
+      "services": [
+        "consultation-prenatale"
+      ]
+    },
+    {
+      "id": "gross-04",
+      "theme": "grossesse",
+      "question": "Quels sont les signes de danger pendant la grossesse ?",
+      "keywords": [
+        "danger",
+        "signes de danger",
+        "grossesse saignement",
+        "maux de tete",
+        "bebe ne bouge",
+        "fievre enceinte",
+        "perte des eaux"
+      ],
+      "answer": "Va immédiatement au centre de santé ou aux urgences si tu as : des saignements, de violents maux de tête ou des troubles de la vue, de la fièvre, des convulsions, une perte de liquide, de fortes douleurs au ventre, un gonflement soudain du visage ou des mains, ou si le bébé ne bouge plus ou beaucoup moins.",
+      "refer": true,
+      "services": [
+        "urgence",
+        "consultation-prenatale"
+      ]
+    },
+    {
+      "id": "gross-05",
+      "theme": "grossesse",
+      "question": "Quels sont les risques d'une grossesse à l'adolescence ?",
+      "keywords": [
+        "adolescence",
+        "jeune enceinte",
+        "grossesse precoce",
+        "enceinte a 15 ans",
+        "trop jeune"
+      ],
+      "answer": "Une grossesse avant 18 ans comporte plus de risques pour la jeune mère et le bébé : anémie, hypertension, accouchement difficile, bébé de petit poids. Un suivi régulier dès le début réduit beaucoup ces risques. Une grossesse ne doit pas t'empêcher de poursuivre tes études : parles-en à un agent de santé et à une personne de confiance.",
+      "refer": true,
+      "services": [
+        "consultation-prenatale"
+      ]
+    },
+    {
+      "id": "gross-06",
+      "theme": "grossesse",
+      "question": "Que manger pendant la grossesse ?",
+      "keywords": [
+        "manger",
+        "alimentation",
+        "nutrition",
+        "enceinte manger",
+        "fer",
+        "acide folique"
+      ],
+      "answer": "Mange varié : légumes, fruits, céréales, légumineuses, poisson, viande ou œufs bien cuits. Le fer et l'acide folique sont importants : ils sont donnés lors des consultations prénatales. Évite l'alcool, le tabac et les médicaments sans avis médical. Bois beaucoup d'eau potable.",
+      "refer": true,
+      "services": [
+        "consultation-prenatale"
+      ]
+    },
+    {
+      "id": "gross-07",
+      "theme": "grossesse",
+      "question": "Peut-on tomber enceinte sans pénétration complète ?",
+      "keywords": [
+        "sans penetration",
+        "juste frotter",
+        "sperme",
+        "pre-ejaculation",
+        "liquide"
+      ],
+      "answer": "C'est rare, mais possible si du sperme ou du liquide pré-éjaculatoire se trouve près de l'entrée du vagin. Pour éviter tout risque, utilise une contraception. En cas de doute, la contraception d'urgence peut être prise dans les jours qui suivent.",
+      "refer": true,
+      "services": [
+        "contraception-urgence"
+      ]
+    },
+    {
+      "id": "gross-08",
+      "theme": "grossesse",
+      "question": "Où faire un test de grossesse ?",
+      "keywords": [
+        "test de grossesse",
+        "ou faire un test",
+        "acheter un test"
+      ],
+      "answer": "Tu peux acheter un test urinaire en pharmacie ou faire un test au centre de santé, parfois gratuitement. Fais-le à partir du jour où tes règles auraient dû arriver. Si le résultat est négatif mais que tes règles n'arrivent toujours pas, refais un test quelques jours plus tard ou consulte.",
+      "refer": true,
+      "services": [
+        "test-grossesse"
+      ]
+    },
+    {
+      "id": "rel-01",
+      "theme": "relations",
+      "question": "Est-ce que j'ai le droit de dire non ?",
+      "keywords": [
+        "dire non",
+        "pas envie",
+        "oblige",
+        "pression",
+        "insiste"
+      ],
+      "answer": "Oui, toujours. Tu as le droit de refuser un rapport sexuel, à tout moment, même si tu as dit oui avant, même avec ton copain ou ton mari. Quelqu'un qui te force ou te menace commet une violence. Si tu es en danger, parles-en tout de suite à une personne de confiance ou contacte un service d'aide.",
+      "refer": true,
+      "services": [
+        "violence"
+      ]
+    },
+    {
+      "id": "rel-02",
+      "theme": "relations",
+      "question": "Mon copain ne veut pas mettre de préservatif",
+      "keywords": [
+        "ne veut pas de preservatif",
+        "refuse le preservatif",
+        "refuse la capote",
+        "sans capote il veut",
+        "copain"
+      ],
+      "answer": "Ta santé compte. Tu peux lui expliquer que le préservatif protège vous deux des IST et d'une grossesse non désirée, et refuser un rapport sans protection. Le préservatif féminin est aussi une option que tu contrôles. S'il te met la pression ou te menace, ce n'est pas une relation saine.",
+      "refer": true,
+      "services": [
+        "contraception"
+      ]
+    },
+    {
+      "id": "rel-03",
+      "theme": "relations",
+      "question": "Un adulte beaucoup plus âgé me propose de l'argent ou des cadeaux",
+      "keywords": [
+        "argent",
+        "cadeaux",
+        "plus age",
+        "vieux",
+        "il me paye",
+        "contre de l'argent"
+      ],
+      "answer": "Une relation avec un adulte qui donne de l'argent ou des cadeaux en échange de relations sexuelles te met en danger : grossesse, IST, violences, et il peut abuser de son pouvoir. Si tu as moins de 18 ans, c'est une forme d'exploitation. Parles-en à une personne de confiance ou à un service d'aide. Tu n'es pas responsable.",
+      "refer": true,
+      "services": [
+        "violence"
+      ]
+    },
+    {
+      "id": "rel-04",
+      "theme": "relations",
+      "question": "Comment parler de sexualité avec mes parents ?",
+      "keywords": [
+        "parler",
+        "oser",
+        "honte",
+        "maman",
+        "papa"
+      ],
+      "answer": "Ce n'est pas toujours facile. Choisis un moment calme, commence par une question simple ou une information que tu as vue. Si ce n'est pas possible avec tes parents, une tante, une grande sœur, une enseignante ou un agent de santé peuvent t'écouter. Poser des questions sur ta santé est normal et responsable.",
+      "refer": false,
+      "services": []
+    },
+    {
+      "id": "bien-01",
+      "theme": "bien-etre",
+      "question": "Je me sens triste et stressée tout le temps",
+      "keywords": [
+        "triste",
+        "stress",
+        "stressee",
+        "deprime",
+        "angoisse",
+        "seule",
+        "pleure"
+      ],
+      "answer": "Merci de l'avoir dit. Ce que tu ressens compte. Parler à une personne de confiance (amie, famille, enseignante, agent de santé) peut vraiment aider. Si ce sentiment dure plus de deux semaines ou t'empêche de vivre normalement, consulte un agent de santé. Si tu as des idées de te faire du mal, demande de l'aide tout de suite.",
+      "refer": true,
+      "services": [
+        "ecoute"
+      ]
+    },
+    {
+      "id": "orient-01",
+      "theme": "orientation",
+      "question": "Où trouver un centre de santé pour les jeunes ?",
+      "keywords": [
+        "centre de sante",
+        "ou aller",
+        "hopital",
+        "clinique",
+        "planning familial",
+        "pres de chez moi",
+        "consulter"
+      ],
+      "answer": "Tu peux consulter dans les centres de santé, les hôpitaux et les centres de planification familiale. Appuie sur « Trouver un service » pour voir la liste des lieux qui accueillent les jeunes de façon confidentielle.",
+      "refer": true,
+      "services": [
+        "consultation"
+      ]
+    },
+    {
+      "id": "orient-02",
+      "theme": "orientation",
+      "question": "Est-ce que Iniva garde mes questions ?",
+      "keywords": [
+        "confidentiel",
+        "garde mes questions",
+        "donnees",
+        "qui voit",
+        "anonyme",
+        "enregistre"
+      ],
+      "answer": "Non. Iniva ne te demande ni ton nom ni ton numéro, et tes questions ne sont pas enregistrées. Quand tu fermes la page, la conversation disparaît. Iniva donne des informations générales et ne remplace pas une consultation.",
+      "refer": false,
+      "services": []
+    }
+  ]
+}

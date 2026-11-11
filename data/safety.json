@@ -1,0 +1,19 @@
+{
+ "status": "DRAFT - helpline numbers to be confirmed by APSAD before any public use",
+ "crisis_rules": [
+  {"id":"violence-sexuelle","triggers":["viol","violee","viole","abus","abusee","agression sexuelle","agressee","force a coucher","forcee","inceste","touchee sans","attouchement"],
+   "message":"Ce qui t'est arrivé n'est pas de ta faute. Tu as le droit d'être protégée et soignée. Si c'est récent, va au plus vite dans un centre de santé ou aux urgences : dans les 72 heures, des soins peuvent éviter une grossesse et le VIH. Parle à une personne de confiance et contacte un service d'aide ci-dessous."},
+  {"id":"violence","triggers":["frappe","battue","me bat","coups","menace","violent","violence","peur de lui","enfermee"],
+   "message":"Personne n'a le droit de te frapper, de te menacer ou de te faire peur. Si tu es en danger maintenant, mets-toi en sécurité et appelle les secours. Une personne de confiance et les services d'aide ci-dessous peuvent t'accompagner."},
+  {"id":"suicide","triggers":["suicide","me tuer","mourir","en finir","plus envie de vivre","me faire du mal","me couper","disparaitre"],
+   "message":"Merci de me l'avoir écrit. Ce que tu ressens est important et tu mérites de l'aide maintenant. Parle tout de suite à une personne de confiance près de toi, ou va au centre de santé ou aux urgences le plus proche. Tu n'es pas seule."},
+  {"id":"urgence-medicale","triggers":["saigne beaucoup","hemorragie","convulsion","evanouie","perdu connaissance","douleur tres forte","plus respirer","avale des medicaments"],
+   "message":"Cela peut être une urgence médicale. Va immédiatement au centre de santé ou aux urgences le plus proche, ou demande à quelqu'un de t'y emmener."}
+ ],
+ "contacts": [
+  {"label":"Urgences médicales","number":"[à confirmer par APSAD]"},
+  {"label":"Police","number":"[à confirmer par APSAD]"},
+  {"label":"Ligne d'aide aux victimes de violences","number":"[à confirmer par APSAD]"},
+  {"label":"APSAD — accompagnement","number":"[à confirmer par APSAD]"}
+ ]
+}
